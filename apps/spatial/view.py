@@ -1,7 +1,6 @@
 #-*- coding:utf-8 -*-
 #!/usr/bin/env python
-from flask import url_for, redirect, request
-from flask_restful import Resource, reqparse
+from flask_restful import Resource, reqparse, abort
 from apps.spatial import spatial
 from apps.util import make_result
 
@@ -21,3 +20,5 @@ class Index(Resource):
 # class TestWorld(Resource):
 #     def get(self):
 #         return redirect(url_for('spatial.index', user_name='cde'))
+
+
