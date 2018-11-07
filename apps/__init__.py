@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 import flask_restful
 from flask import Flask, abort
+from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import import_string
 
@@ -32,7 +33,7 @@ def create_app():
         bp = import_string(bp_name)
         app.register_blueprint(bp)
 
-
+    CORS(app, supports_credentials=True)
     return app
 
 
